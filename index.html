@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="dark">
+<title>OC2 Companion &mdash; Closed Beta</title>
+<meta name="description" content="Join the OC2 Companion closed beta. Drive your OpenCode 2 agent from your phone: chat, approvals, sessions.">
+<link rel="icon" type="image/png" href="assets/icon-512.png">
+<meta name="theme-color" content="#17171C">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="OC2 Companion &mdash; Closed Beta">
+<meta property="og:description" content="Drive your OpenCode 2 agent from your phone: chat, approvals, sessions. Join the closed beta.">
+<meta property="og:image" content="assets/feature-graphic.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="OC2 Companion &mdash; Closed Beta">
+<meta name="twitter:description" content="Drive your OpenCode 2 agent from your phone: chat, approvals, sessions.">
+<meta name="twitter:image" content="assets/feature-graphic.png">
+
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  // Tailwind Play CDN: utility classes are compiled in the browser, so this page
+  // needs no build step. Palette mirrors the app's dark theme
+  // (app/src/main/java/com/Mrakulis/OC2Companion/ui/theme/Theme.kt).
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          ink:      '#17171C',
+          surface:  '#1E1E24',
+          surface2: '#2A2A32',
+          line:     '#3A3A44',
+          fg:       '#E6E6E6',
+          muted:    '#8B8FA3',
+          brand:    '#7C5CFF',
+          brand2:   '#8B93FF',
+          accent:   '#4DD0C8',
+          danger:   '#FF6B6B'
+        },
+        fontFamily: {
+          sans: ['system-ui', '-apple-system', 'Segoe UI', 'Roboto', 'Helvetica Neue', 'Arial', 'sans-serif'],
+          mono: ['ui-monospace', 'SFMono-Regular', 'Menlo', 'Consolas', 'monospace']
+        }
+      }
+    }
+  }
+</script>
+<style>
+  /* Minimal fallback for the rare case JavaScript is unavailable: the Play CDN
+     compiles the utilities at runtime, so these base rules keep the page readable
+     instead of an unstyled white page. Utility classes (which load later) win. */
+  :root { color-scheme: dark; }
+  body { background: #17171C; color: #E6E6E6; font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; }
+  a { color: #8B93FF; }
+  ::selection { background: #7C5CFF; color: #fff; }
+</style>
+</head>
+
+<body class="min-h-screen bg-ink font-sans text-fg antialiased">
+
+<a href="#join" class="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-50 focus:rounded-lg focus:bg-brand focus:px-4 focus:py-2 focus:text-sm focus:font-semibold focus:text-white">Skip to joining instructions</a>
+
+<!-- ============================ Header ============================ -->
+<header class="border-b border-line/70">
+  <div class="mx-auto flex max-w-5xl flex-col gap-6 px-5 py-10 sm:px-8 sm:py-14 md:flex-row md:items-center md:gap-8">
+
+    <img src="assets/icon-512.png" alt="OC2 Companion app icon" width="96" height="96"
+         class="h-20 w-20 shrink-0 rounded-2xl border border-line/60 shadow-2xl shadow-brand/20 sm:h-24 sm:w-24">
+
+    <div class="min-w-0">
+      <p class="text-xs font-semibold uppercase tracking-[0.18em] text-brand2">Closed beta</p>
+      <h1 class="mt-2 text-3xl font-bold tracking-tight text-white sm:text-4xl">OC2 Companion</h1>
+      <p class="mt-2 max-w-2xl text-balance text-base text-muted sm:text-lg">
+        Drive your OpenCode 2 agent from your phone: chat, approvals, sessions.
+      </p>
+
+      <ul class="mt-5 flex flex-wrap gap-2 text-xs">
+        <li class="rounded-full border border-brand/40 bg-brand/10 px-3 py-1 font-medium text-brand2">Closed beta</li>
+        <li class="rounded-full border border-line bg-surface2 px-3 py-1 text-muted">Android 8.0+</li>
+        <li class="rounded-full border border-line bg-surface2 px-3 py-1 text-muted">v1.0.17</li>
+        <li class="rounded-full border border-line bg-surface2 px-3 py-1 text-muted">Paid app &middot; $2</li>
+      </ul>
+
+      <p class="mt-4 font-mono text-xs text-muted/80">com.Mrakulis.OC2Companion</p>
+    </div>
+
+  </div>
+</header>
+
+<main>
+
+  <!-- ======================= Before you start ======================= -->
+  <section aria-labelledby="requirements-heading" class="mx-auto max-w-5xl px-5 pt-10 sm:px-8 sm:pt-14">
+    <div class="rounded-2xl border border-line bg-surface p-5 sm:p-6">
+      <h2 id="requirements-heading" class="text-xs font-semibold uppercase tracking-[0.18em] text-accent">Before you start</h2>
+
+      <p class="mt-3 text-sm leading-relaxed text-fg/90 sm:text-base">
+        OC2 Companion is a <strong class="font-semibold text-white">remote client</strong>, not a second agent. It has
+        nothing to talk to until OpenCode 2 is running on a PC, so the app will look empty until you connect it.
+      </p>
+
+      <ul class="mt-5 grid gap-3 text-sm text-muted sm:grid-cols-2">
+        <li class="flex gap-2.5">
+          <svg class="mt-0.5 h-4 w-4 shrink-0 text-accent" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M16.7 5.3a1 1 0 0 1 0 1.4l-7.5 7.5a1 1 0 0 1-1.4 0L3.3 9.7a1 1 0 1 1 1.4-1.4l3.3 3.3 6.8-6.8a1 1 0 0 1 1.4 0Z" clip-rule="evenodd"/></svg>
+          <span>A PC running the OpenCode 2 CLI, available as <code class="rounded bg-surface2 px-1.5 py-0.5 font-mono text-xs text-fg/90">opencode</code></span>
+        </li>
+        <li class="flex gap-2.5">
+          <svg class="mt-0.5 h-4 w-4 shrink-0 text-accent" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M16.7 5.3a1 1 0 0 1 0 1.4l-7.5 7.5a1 1 0 0 1-1.4 0L3.3 9.7a1 1 0 1 1 1.4-1.4l3.3 3.3 6.8-6.8a1 1 0 0 1 1.4 0Z" clip-rule="evenodd"/></svg>
+          <span>VS Code 1.96 or newer with the <em class="not-italic text-fg/90">OpenCode 2: Sidebar GUI</em> extension installed</span>
+        </li>
+        <li class="flex gap-2.5">
+          <svg class="mt-0.5 h-4 w-4 shrink-0 text-accent" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M16.7 5.3a1 1 0 0 1 0 1.4l-7.5 7.5a1 1 0 0 1-1.4 0L3.3 9.7a1 1 0 1 1 1.4-1.4l3.3 3.3 6.8-6.8a1 1 0 0 1 1.4 0Z" clip-rule="evenodd"/></svg>
+          <span>The extension's companion server switched on, with a username and password set (it is off by default)</span>
+        </li>
+        <li class="flex gap-2.5">
+          <svg class="mt-0.5 h-4 w-4 shrink-0 text-accent" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M16.7 5.3a1 1 0 0 1 0 1.4l-7.5 7.5a1 1 0 0 1-1.4 0L3.3 9.7a1 1 0 1 1 1.4-1.4l3.3 3.3 6.8-6.8a1 1 0 0 1 1.4 0Z" clip-rule="evenodd"/></svg>
+          <span>A network path from your phone to that PC &mdash; the same network, or a private VPN such as Tailscale</span>
+        </li>
+      </ul>
+
+      <p class="mt-5 text-sm text-muted">
+        Get the extension from the VS&nbsp;Code Marketplace:
+        <a class="font-medium text-brand2 underline decoration-brand2/40 underline-offset-2 transition hover:text-white"
+           href="https://marketplace.visualstudio.com/items?itemName=Mrakulis.opencode2-vscode-gui"
+           target="_blank" rel="noopener noreferrer">Mrakulis.opencode2-vscode-gui</a>.
+      </p>
+    </div>
+  </section>
+
+  <!-- ==================== How to join closed beta ==================== -->
+  <section id="join" aria-labelledby="join-heading" class="mx-auto max-w-5xl scroll-mt-6 px-5 py-10 sm:px-8 sm:py-14">
+    <h2 id="join-heading" class="text-2xl font-bold tracking-tight text-white sm:text-3xl">How to join the closed beta</h2>
+    <p class="mt-2 max-w-2xl text-sm text-muted sm:text-base">
+      Three steps, in order. Sign in with the same Google account you use in the Play Store &mdash; the opt-in link
+      only works once that account is in the group.
+    </p>
+
+    <ol class="mt-6 grid gap-4 md:grid-cols-3">
+
+      <!-- Step 1 -->
+      <li class="flex flex-col rounded-2xl border border-line bg-surface p-5">
+        <span class="inline-flex h-9 w-9 items-center justify-center rounded-full bg-brand/15 font-mono text-sm font-semibold text-brand2 ring-1 ring-inset ring-brand/40">1</span>
+        <h3 class="mt-4 text-lg font-semibold text-white">Join the Google Group</h3>
+        <p class="mt-2 grow text-sm leading-relaxed text-muted">
+          Join the OC2 Companion testers group so your Google account is eligible for the beta.
+        </p>
+        <a href="https://groups.google.com/g/oc2-companion"
+           target="_blank" rel="noopener noreferrer"
+           class="mt-5 inline-flex items-center justify-center gap-2 rounded-xl border border-line bg-surface2 px-4 py-3 text-sm font-semibold text-fg transition hover:border-brand2 hover:bg-surface2/60 hover:text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-brand2 focus-visible:ring-offset-2 focus-visible:ring-offset-surface">
+          Join Google Group
+          <svg class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M11 3a1 1 0 1 0 0 2h2.586l-4.293 4.293a1 1 0 1 0 1.414 1.414L15 6.414V9a1 1 0 1 0 2 0V4a1 1 0 0 0-1-1h-5Z"/><path d="M5 5a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2v-3a1 1 0 1 0-2 0v3H5V7h3a1 1 0 0 0 0-2H5Z"/></svg>
+        </a>
+      </li>
+
+      <!-- Step 2 -->
+      <li class="flex flex-col rounded-2xl border border-brand/40 bg-surface p-5 ring-1 ring-brand/20">
+        <span class="inline-flex h-9 w-9 items-center justify-center rounded-full bg-brand font-mono text-sm font-semibold text-white ring-1 ring-inset ring-brand2/50">2</span>
+        <h3 class="mt-4 text-lg font-semibold text-white">Become a tester</h3>
+        <p class="mt-2 grow text-sm leading-relaxed text-muted">
+          Open the opt-in link and tap <em class="not-italic text-fg/90">Become a tester</em>. Use this to opt in.
+        </p>
+        <a href="https://play.google.com/apps/testing/com.Mrakulis.OC2Companion"
+           target="_blank" rel="noopener noreferrer"
+           class="mt-5 inline-flex items-center justify-center gap-2 rounded-xl bg-brand px-4 py-3 text-sm font-semibold text-white shadow-lg shadow-brand/25 transition hover:bg-brand2 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand2 focus-visible:ring-offset-2 focus-visible:ring-offset-surface">
+          Become a Tester
+          <svg class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M11 3a1 1 0 1 0 0 2h2.586l-4.293 4.293a1 1 0 1 0 1.414 1.414L15 6.414V9a1 1 0 1 0 2 0V4a1 1 0 0 0-1-1h-5Z"/><path d="M5 5a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2v-3a1 1 0 1 0-2 0v3H5V7h3a1 1 0 0 0 0-2H5Z"/></svg>
+        </a>
+      </li>
+
+      <!-- Step 3 -->
+      <li class="flex flex-col rounded-2xl border border-line bg-surface p-5">
+        <span class="inline-flex h-9 w-9 items-center justify-center rounded-full bg-brand/15 font-mono text-sm font-semibold text-brand2 ring-1 ring-inset ring-brand/40">3</span>
+        <h3 class="mt-4 text-lg font-semibold text-white">Download on the Play Store</h3>
+        <p class="mt-2 grow text-sm leading-relaxed text-muted">
+          Install OC2 Companion from Google Play and connect it to your OpenCode 2 server.
+        </p>
+        <a href="https://play.google.com/store/apps/details?id=com.Mrakulis.OC2Companion"
+           target="_blank" rel="noopener noreferrer"
+           class="mt-5 inline-flex items-center justify-center gap-2 rounded-xl border border-line bg-surface2 px-4 py-3 text-sm font-semibold text-fg transition hover:border-brand2 hover:bg-surface2/60 hover:text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-brand2 focus-visible:ring-offset-2 focus-visible:ring-offset-surface">
+          Download on Play Store
+          <svg class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M11 3a1 1 0 1 0 0 2h2.586l-4.293 4.293a1 1 0 1 0 1.414 1.414L15 6.414V9a1 1 0 1 0 2 0V4a1 1 0 0 0-1-1h-5Z"/><path d="M5 5a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2v-3a1 1 0 1 0-2 0v3H5V7h3a1 1 0 0 0 0-2H5Z"/></svg>
+        </a>
+        <p class="mt-3 text-xs leading-relaxed text-muted">
+          The Play page opens once your account has opted in via Step&nbsp;2.
+        </p>
+      </li>
+
+    </ol>
+
+    <p class="mt-4 text-xs leading-relaxed text-muted">
+      Activation can take a few minutes after you opt in. OC2 Companion is a paid app ($2), with an optional one-time
+      $2 in-app purchase (&ldquo;Tablet Workspace Pro&rdquo;) for the tablet workspace.
+    </p>
+  </section>
+
+  <!-- ========================= What to test ========================= -->
+  <section aria-labelledby="test-heading" class="border-y border-line/70 bg-surface/40">
+    <div class="mx-auto max-w-5xl px-5 py-10 sm:px-8 sm:py-14">
+      <h2 id="test-heading" class="text-2xl font-bold tracking-tight text-white sm:text-3xl">What to test</h2>
+      <p class="mt-2 max-w-2xl text-sm text-muted sm:text-base">
+        A walk through these areas is the most useful thing you can do. Break anything you can &mdash; that is the point
+        of a beta.
+      </p>
+
+      <div class="mt-6 grid gap-4 lg:grid-cols-3">
+
+        <!-- Core flows -->
+        <div class="rounded-2xl border border-line bg-surface p-5">
+          <h3 class="flex items-center gap-2 text-sm font-semibold uppercase tracking-wider text-brand2">
+            <svg class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M10 2a8 8 0 1 0 0 16 8 8 0 0 0 0-16Zm0 3.5a1.25 1.25 0 1 1 0 2.5 1.25 1.25 0 0 1 0-2.5Zm1.25 9.75h-2.5a.75.75 0 0 1 0-1.5h.5v-3h-.5a.75.75 0 0 1 0-1.5h1.25c.41 0 .75.34.75.75v3.75h.5a.75.75 0 0 1 0 1.5Z"/></svg>
+            Core flows
+          </h3>
+          <ul class="mt-4 space-y-2.5 text-sm text-muted">
+            <li class="flex gap-2.5"><svg class="mt-0.5 h-4 w-4 shrink-0 text-accent" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M16.7 5.3a1 1 0 0 1 0 1.4l-7.5 7.5a1 1 0 0 1-1.4 0L3.3 9.7a1 1 0 1 1 1.4-1.4l3.3 3.3 6.8-6.8a1 1 0 0 1 1.4 0Z" clip-rule="evenodd"/></svg><span>Connect to your own server: URL, username, password, then <span class="text-fg/90">Test connection</span></span></li>
+            <li class="flex gap-2.5"><svg class="mt-0.5 h-4 w-4 shrink-0 text-accent" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M16.7 5.3a1 1 0 0 1 0 1.4l-7.5 7.5a1 1 0 0 1-1.4 0L3.3 9.7a1 1 0 1 1 1.4-1.4l3.3 3.3 6.8-6.8a1 1 0 0 1 1.4 0Z" clip-rule="evenodd"/></svg><span>Chat: streaming text and reasoning, markdown, <code class="rounded bg-surface2 px-1 py-0.5 font-mono text-xs text-fg/90">/</code> commands and skills, <code class="rounded bg-surface2 px-1 py-0.5 font-mono text-xs text-fg/90">@</code> file mentions, <code class="rounded bg-surface2 px-1 py-0.5 font-mono text-xs text-fg/90">+</code> attachments</span></li>
+            <li class="flex gap-2.5"><svg class="mt-0.5 h-4 w-4 shrink-0 text-accent" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M16.7 5.3a1 1 0 0 1 0 1.4l-7.5 7.5a1 1 0 0 1-1.4 0L3.3 9.7a1 1 0 1 1 1.4-1.4l3.3 3.3 6.8-6.8a1 1 0 0 1 1.4 0Z" clip-rule="evenodd"/></svg><span>Tool cards: shell output, edit diffs, read one-liners, Code Mode</span></li>
+            <li class="flex gap-2.5"><svg class="mt-0.5 h-4 w-4 shrink-0 text-accent" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M16.7 5.3a1 1 0 0 1 0 1.4l-7.5 7.5a1 1 0 0 1-1.4 0L3.3 9.7a1 1 0 1 1 1.4-1.4l3.3 3.3 6.8-6.8a1 1 0 0 1 1.4 0Z" clip-rule="evenodd"/></svg><span>Queue dock: send now (steer), keep queued, or remove a follow-up while the agent works</span></li>
+            <li class="flex gap-2.5"><svg class="mt-0.5 h-4 w-4 shrink-0 text-accent" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M16.7 5.3a1 1 0 0 1 0 1.4l-7.5 7.5a1 1 0 0 1-1.4 0L3.3 9.7a1 1 0 1 1 1.4-1.4l3.3 3.3 6.8-6.8a1 1 0 0 1 1.4 0Z" clip-rule="evenodd"/></svg><span>Sessions: create, rename, delete, browse folders, start in a project, and scroll up to load older history</span></li>
+            <li class="flex gap-2.5"><svg class="mt-0.5 h-4 w-4 shrink-0 text-accent" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M16.7 5.3a1 1 0 0 1 0 1.4l-7.5 7.5a1 1 0 0 1-1.4 0L3.3 9.7a1 1 0 1 1 1.4-1.4l3.3 3.3 6.8-6.8a1 1 0 0 1 1.4 0Z" clip-rule="evenodd"/></svg><span>Models and agents, providers, MCP servers, plugins, worktrees, <code class="rounded bg-surface2 px-1 py-0.5 font-mono text-xs text-fg/90">/web</code> search, host commands</span></li>
+            <li class="flex gap-2.5"><svg class="mt-0.5 h-4 w-4 shrink-0 text-accent" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M16.7 5.3a1 1 0 0 1 0 1.4l-7.5 7.5a1 1 0 0 1-1.4 0L3.3 9.7a1 1 0 1 1 1.4-1.4l3.3 3.3 6.8-6.8a1 1 0 0 1 1.4 0Z" clip-rule="evenodd"/></svg><span>Usage and cost stats (7d / 30d / MTD / All), subagents, git branch and change badge</span></li>
+            <li class="flex gap-2.5"><svg class="mt-0.5 h-4 w-4 shrink-0 text-accent" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M16.7 5.3a1 1 0 0 1 0 1.4l-7.5 7.5a1 1 0 0 1-1.4 0L3.3 9.7a1 1 0 1 1 1.4-1.4l3.3 3.3 6.8-6.8a1 1 0 0 1 1.4 0Z" clip-rule="evenodd"/></svg><span>Terminal: open a shell, try Ctrl+C / Ctrl+D, then detach versus End</span></li>
+          </ul>
+        </div>
+
+        <!-- Approvals & background -->
+        <div class="rounded-2xl border border-line bg-surface p-5">
+          <h3 class="flex items-center gap-2 text-sm font-semibold uppercase tracking-wider text-brand2">
+            <svg class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M10 1.5a4 4 0 0 0-4 4V7H5.5A1.5 1.5 0 0 0 4 8.5v8A1.5 1.5 0 0 0 5.5 18h9a1.5 1.5 0 0 0 1.5-1.5v-8A1.5 1.5 0 0 0 14.5 7H14V5.5a4 4 0 0 0-4-4Zm2.5 5.5V5.5a2.5 2.5 0 0 0-5 0V7h5Zm-2.5 4a1.25 1.25 0 0 0-.75 2.25v1.5a.75.75 0 0 0 1.5 0v-1.5A1.25 1.25 0 0 0 10 11Z" clip-rule="evenodd"/></svg>
+            Approvals &amp; background
+          </h3>
+          <ul class="mt-4 space-y-2.5 text-sm text-muted">
+            <li class="flex gap-2.5"><svg class="mt-0.5 h-4 w-4 shrink-0 text-accent" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M16.7 5.3a1 1 0 0 1 0 1.4l-7.5 7.5a1 1 0 0 1-1.4 0L3.3 9.7a1 1 0 1 1 1.4-1.4l3.3 3.3 6.8-6.8a1 1 0 0 1 1.4 0Z" clip-rule="evenodd"/></svg><span>Approvals pooled from <span class="text-fg/90">every</span> session: top-bar badge, lock badge on the session row, and a notification</span></li>
+            <li class="flex gap-2.5"><svg class="mt-0.5 h-4 w-4 shrink-0 text-accent" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M16.7 5.3a1 1 0 0 1 0 1.4l-7.5 7.5a1 1 0 0 1-1.4 0L3.3 9.7a1 1 0 1 1 1.4-1.4l3.3 3.3 6.8-6.8a1 1 0 0 1 1.4 0Z" clip-rule="evenodd"/></svg><span>Waiting sheet: forms with a pinned Submit, permission cards grouped by session, reject with a reason</span></li>
+            <li class="flex gap-2.5"><svg class="mt-0.5 h-4 w-4 shrink-0 text-accent" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M16.7 5.3a1 1 0 0 1 0 1.4l-7.5 7.5a1 1 0 0 1-1.4 0L3.3 9.7a1 1 0 1 1 1.4-1.4l3.3 3.3 6.8-6.8a1 1 0 0 1 1.4 0Z" clip-rule="evenodd"/></svg><span>Notification actions: answer <span class="text-fg/90">Allow once</span> or <span class="text-fg/90">Deny</span> without opening the app</span></li>
+            <li class="flex gap-2.5"><svg class="mt-0.5 h-4 w-4 shrink-0 text-accent" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M16.7 5.3a1 1 0 0 1 0 1.4l-7.5 7.5a1 1 0 0 1-1.4 0L3.3 9.7a1 1 0 1 1 1.4-1.4l3.3 3.3 6.8-6.8a1 1 0 0 1 1.4 0Z" clip-rule="evenodd"/></svg><span>Saved permission rules under More &rarr; Saved Permissions</span></li>
+            <li class="flex gap-2.5"><svg class="mt-0.5 h-4 w-4 shrink-0 text-accent" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M16.7 5.3a1 1 0 0 1 0 1.4l-7.5 7.5a1 1 0 0 1-1.4 0L3.3 9.7a1 1 0 1 1 1.4-1.4l3.3 3.3 6.8-6.8a1 1 0 0 1 1.4 0Z" clip-rule="evenodd"/></svg><span>Background a run mid-flight, then confirm alerts still arrive while the app is closed</span></li>
+            <li class="flex gap-2.5"><svg class="mt-0.5 h-4 w-4 shrink-0 text-accent" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M16.7 5.3a1 1 0 0 1 0 1.4l-7.5 7.5a1 1 0 0 1-1.4 0L3.3 9.7a1 1 0 1 1 1.4-1.4l3.3 3.3 6.8-6.8a1 1 0 0 1 1.4 0Z" clip-rule="evenodd"/></svg><span>Recover gracefully: rotate the device, kill the network briefly, reopen mid-run</span></li>
+          </ul>
+        </div>
+
+        <!-- Tablet workspace -->
+        <div class="rounded-2xl border border-line bg-surface p-5">
+          <h3 class="flex items-center gap-2 text-sm font-semibold uppercase tracking-wider text-brand2">
+            <svg class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M3 4.5A1.5 1.5 0 0 1 4.5 3h11A1.5 1.5 0 0 1 17 4.5v11a1.5 1.5 0 0 1-1.5 1.5h-11A1.5 1.5 0 0 1 3 15.5v-11Zm1.5 0v11h11v-11h-11Z"/><path d="M8.25 6.75a.75.75 0 0 0 0 1.5h.5v3.5h-.5a.75.75 0 0 0 0 1.5h2.5a.75.75 0 0 0 0-1.5h-.5v-4.25a.75.75 0 0 0-.75-.75h-1.25Z"/></svg>
+            Tablet workspace
+            <span class="rounded-full border border-brand/40 bg-brand/10 px-2 py-0.5 text-[10px] font-medium normal-case tracking-normal text-brand2">Pro &middot; $2</span>
+          </h3>
+          <ul class="mt-4 space-y-2.5 text-sm text-muted">
+            <li class="flex gap-2.5"><svg class="mt-0.5 h-4 w-4 shrink-0 text-accent" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M16.7 5.3a1 1 0 0 1 0 1.4l-7.5 7.5a1 1 0 0 1-1.4 0L3.3 9.7a1 1 0 1 1 1.4-1.4l3.3 3.3 6.8-6.8a1 1 0 0 1 1.4 0Z" clip-rule="evenodd"/></svg><span>On a 10-inch tablet in landscape: activity rail, file tree, editor and chat side by side</span></li>
+            <li class="flex gap-2.5"><svg class="mt-0.5 h-4 w-4 shrink-0 text-accent" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M16.7 5.3a1 1 0 0 1 0 1.4l-7.5 7.5a1 1 0 0 1-1.4 0L3.3 9.7a1 1 0 1 1 1.4-1.4l3.3 3.3 6.8-6.8a1 1 0 0 1 1.4 0Z" clip-rule="evenodd"/></svg><span>Resize the panes and reopen the app &mdash; widths, expanded folders and open tabs should persist</span></li>
+            <li class="flex gap-2.5"><svg class="mt-0.5 h-4 w-4 shrink-0 text-accent" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M16.7 5.3a1 1 0 0 1 0 1.4l-7.5 7.5a1 1 0 0 1-1.4 0L3.3 9.7a1 1 0 1 1 1.4-1.4l3.3 3.3 6.8-6.8a1 1 0 0 1 1.4 0Z" clip-rule="evenodd"/></svg><span>Reference a line range in chat, then edit a file and press Save</span></li>
+            <li class="flex gap-2.5"><svg class="mt-0.5 h-4 w-4 shrink-0 text-accent" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M16.7 5.3a1 1 0 0 1 0 1.4l-7.5 7.5a1 1 0 0 1-1.4 0L3.3 9.7a1 1 0 1 1 1.4-1.4l3.3 3.3 6.8-6.8a1 1 0 0 1 1.4 0Z" clip-rule="evenodd"/></svg><span>Change the file on your PC, then Save from the tablet &mdash; it should flag the conflict, not overwrite</span></li>
+            <li class="flex gap-2.5"><svg class="mt-0.5 h-4 w-4 shrink-0 text-accent" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M16.7 5.3a1 1 0 0 1 0 1.4l-7.5 7.5a1 1 0 0 1-1.4 0L3.3 9.7a1 1 0 1 1 1.4-1.4l3.3 3.3 6.8-6.8a1 1 0 0 1 1.4 0Z" clip-rule="evenodd"/></svg><span>Rename and delete from the tree, including the confirmation on a non-empty folder</span></li>
+            <li class="flex gap-2.5"><svg class="mt-0.5 h-4 w-4 shrink-0 text-accent" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M16.7 5.3a1 1 0 0 1 0 1.4l-7.5 7.5a1 1 0 0 1-1.4 0L3.3 9.7a1 1 0 1 1 1.4-1.4l3.3 3.3 6.8-6.8a1 1 0 0 1 1.4 0Z" clip-rule="evenodd"/></svg><span>On a tablet without the purchase, confirm the Pro upsell appears instead of the workspace</span></li>
+          </ul>
+          <p class="mt-4 border-t border-line/60 pt-3 text-xs leading-relaxed text-muted">
+            The workspace is the one paid extra: a one-time <span class="text-fg/90">$2</span> in-app purchase
+            (&ldquo;Tablet Workspace Pro&rdquo;). A phone is never asked &mdash; the upsell only appears where the
+            workspace would have.
+          </p>
+        </div>
+
+      </div>
+
+      <p class="mt-4 text-xs leading-relaxed text-muted">
+        The terminal and tablet file editing need a reasonably recent companion extension (1.0.2+ and 1.4.0+
+        respectively). On an older extension the workspace stays read-only and the app says why.
+      </p>
+    </div>
+  </section>
+
+  <!-- ================== Report issues and feedback ================== -->
+  <section id="feedback" aria-labelledby="feedback-heading" class="mx-auto max-w-5xl px-5 py-10 sm:px-8 sm:py-14">
+    <h2 id="feedback-heading" class="text-2xl font-bold tracking-tight text-white sm:text-3xl">Report issues &amp; feedback</h2>
+    <p class="mt-2 max-w-2xl text-sm text-muted sm:text-base">
+      Found a bug, a crash, or something that just feels wrong? Tell us. Rough notes are fine.
+    </p>
+
+    <div class="mt-6 grid gap-4 lg:grid-cols-2">
+
+      <!-- Contact -->
+      <div class="flex flex-col rounded-2xl border border-line bg-surface p-5 sm:p-6">
+        <h3 class="text-sm font-semibold uppercase tracking-wider text-brand2">Email the beta team</h3>
+        <p class="mt-3 grow text-sm leading-relaxed text-muted">
+          Reports go straight to the developer. The button opens your mail app with the subject and a short template
+          already filled in.
+        </p>
+        <a href="mailto:support@devmedia.co.za?subject=%5BOC2%20Companion%20Beta%5D%20&amp;body=App%20version%3A%20%0AAndroid%20version%3A%20%0ADevice%3A%20%0A%0ASteps%20to%20reproduce%3A%0A1.%20%0A%0AExpected%3A%0A%0AActual%3A%0A"
+           class="mt-5 inline-flex items-center justify-center gap-2 rounded-xl bg-brand px-4 py-3 text-sm font-semibold text-white shadow-lg shadow-brand/25 transition hover:bg-brand2 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand2 focus-visible:ring-offset-2 focus-visible:ring-offset-surface">
+          <svg class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M2.5 5A2.5 2.5 0 0 1 5 2.5h10A2.5 2.5 0 0 1 17.5 5v10A2.5 2.5 0 0 1 15 17.5H5A2.5 2.5 0 0 1 2.5 15V5Zm2.2-.5a1 1 0 0 0-.7 1.72l5.3 4.5a1.5 1.5 0 0 0 1.9 0l5.3-4.5A1 1 0 0 0 15.8 4.5H4.7Z"/></svg>
+          support@devmedia.co.za
+        </a>
+        <p class="mt-4 text-xs text-muted">
+          Privacy questions: <a class="text-brand2 underline decoration-brand2/40 underline-offset-2 hover:text-white" href="mailto:privacy@devmedia.co.za">privacy@devmedia.co.za</a>
+        </p>
+      </div>
+
+      <!-- What to include -->
+      <div class="rounded-2xl border border-line bg-surface p-5 sm:p-6">
+        <h3 class="text-sm font-semibold uppercase tracking-wider text-brand2">What to include</h3>
+        <ul class="mt-4 space-y-2.5 text-sm text-muted">
+          <li class="flex gap-2.5"><span class="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-brand2"></span><span>App version &mdash; shown on <span class="text-fg/90">More &rarr; About</span> as <code class="rounded bg-surface2 px-1 py-0.5 font-mono text-xs text-fg/90">v1.0.17</code></span></li>
+          <li class="flex gap-2.5"><span class="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-brand2"></span><span>Your Android version and device model</span></li>
+          <li class="flex gap-2.5"><span class="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-brand2"></span><span>What you did, in steps &mdash; as briefly or as verbosely as you like</span></li>
+          <li class="flex gap-2.5"><span class="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-brand2"></span><span>What you expected, and what actually happened</span></li>
+          <li class="flex gap-2.5"><span class="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-brand2"></span><span>A screenshot or screen recording, if you have one</span></li>
+          <li class="flex gap-2.5"><span class="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-brand2"></span><span>For anything involving AI output, the app's own <span class="text-fg/90">report</span> action works too</span></li>
+        </ul>
+        <p class="mt-4 text-xs leading-relaxed text-muted">
+          Please don't paste real server passwords or anything sensitive. Prompts and file contents are usually all
+          that's needed.
+        </p>
+      </div>
+
+    </div>
+
+    <!-- ===================================================================
+         Optional embedded form.
+         To swap the email button for a hosted form, paste the provider's
+         iframe here and remove the button above. Example shape:
+
+         <div class="mt-6 overflow-hidden rounded-2xl border border-line bg-surface">
+           <iframe src="https://docs.google.com/forms/d/e/XXXXXXXX/viewform?embedded=true"
+                   title="OC2 Companion beta feedback"
+                   class="h-[900px] w-full" loading="lazy">Loading…</iframe>
+         </div>
+         =================================================================== -->
+  </section>
+
+</main>
+
+<!-- ============================= Footer ============================= -->
+<footer class="border-t border-line/70 bg-surface/40">
+  <div class="mx-auto max-w-5xl px-5 py-10 sm:px-8 sm:py-12">
+
+    <img src="assets/feature-graphic.png" alt="OC2 Companion" width="1024" height="500"
+         class="mb-8 h-auto w-full max-w-md rounded-xl border border-line/60">
+
+    <div class="grid gap-8 text-sm sm:grid-cols-2">
+      <div>
+        <h2 class="text-xs font-semibold uppercase tracking-[0.18em] text-muted">About</h2>
+        <p class="mt-3 max-w-md text-xs leading-relaxed text-muted">
+          OC2 Companion is an independent project. It is not affiliated with, endorsed by or maintained by Anomaly,
+          the makers of OpenCode. &ldquo;OpenCode&rdquo; is their mark and is named here only to describe what the app
+          connects to.
+        </p>
+        <p class="mt-3 max-w-md text-xs leading-relaxed text-muted">
+          The app is a paid app ($2). The tablet workspace is an optional one-time $2 in-app purchase
+          (&ldquo;Tablet Workspace Pro&rdquo;). Purchases and refunds are handled by Google Play.
+        </p>
+      </div>
+
+      <div>
+        <h2 class="text-xs font-semibold uppercase tracking-[0.18em] text-muted">Links</h2>
+        <ul class="mt-3 space-y-2">
+          <li><a class="text-brand2 underline decoration-brand2/40 underline-offset-2 transition hover:text-white" href="https://mrakulis.github.io/oc2-companion-legal/" target="_blank" rel="noopener noreferrer">Privacy Policy</a></li>
+          <li><a class="text-brand2 underline decoration-brand2/40 underline-offset-2 transition hover:text-white" href="https://mrakulis.github.io/oc2-companion-legal/terms.html" target="_blank" rel="noopener noreferrer">Terms of Use</a></li>
+          <li><a class="text-brand2 underline decoration-brand2/40 underline-offset-2 transition hover:text-white" href="mailto:support@devmedia.co.za">support@devmedia.co.za</a></li>
+          <li><a class="text-brand2 underline decoration-brand2/40 underline-offset-2 transition hover:text-white" href="https://play.google.com/store/apps/details?id=com.Mrakulis.OC2Companion" target="_blank" rel="noopener noreferrer">Google Play listing</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="mt-10 flex flex-col gap-2 border-t border-line/70 pt-6 text-xs text-muted sm:flex-row sm:items-center sm:justify-between">
+      <p class="font-mono">com.Mrakulis.OC2Companion &middot; v1.0.17</p>
+      <p>Copyright &copy; 2026 Mrakulis. All rights reserved.</p>
+    </div>
+
+  </div>
+</footer>
+
+</body>
+</html>
