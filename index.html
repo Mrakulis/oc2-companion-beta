@@ -135,6 +135,14 @@
           The default port is <code class="rounded bg-surface2 px-1.5 py-0.5 font-mono text-xs text-fg/90">12421</code>.
           <strong class="font-semibold text-fg/90">Tailscale tip:</strong> use the <code class="rounded bg-surface2 px-1.5 py-0.5 font-mono text-xs text-fg/90">100.x</code> address, not the MagicDNS name (<code class="rounded bg-surface2 px-1.5 py-0.5 font-mono text-xs text-fg/90">something.ts.net</code>). The app treats <code class="rounded bg-surface2 px-1.5 py-0.5 font-mono text-xs text-fg/90">.ts.net</code> names as public hosts, so plain <code class="rounded bg-surface2 px-1.5 py-0.5 font-mono text-xs text-fg/90">http</code> to them is refused by default.
         </p>
+        <p class="mt-3 text-xs leading-relaxed text-muted">
+          <strong class="font-semibold text-fg/90">Using autostart with a mesh VPN?</strong>
+          <code class="rounded bg-surface2 px-1.5 py-0.5 font-mono text-xs text-fg/90">0.0.0.0</code> is the easiest bind for
+          <code class="rounded bg-surface2 px-1.5 py-0.5 font-mono text-xs text-fg/90">opencode2.server.listenHostname</code>:
+          it listens on every interface, so your LAN and the VPN are both reachable and it does not depend on the adapter
+          being up yet. Binding the VPN address directly also works. At logon that adapter often appears seconds later, so
+          the background companion retries for up to 5 minutes before giving up.
+        </p>
       </div>
 
       <p class="mt-5 text-sm text-muted">
