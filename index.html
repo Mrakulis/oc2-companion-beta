@@ -94,7 +94,7 @@
   <section id="pricing" aria-labelledby="pricing-heading" class="mx-auto max-w-5xl scroll-mt-6 px-5 pt-10 sm:px-8 sm:pt-14">
     <h2 id="pricing-heading" class="text-2xl font-bold tracking-tight text-white sm:text-3xl">Pricing</h2>
     <p class="mt-2 max-w-2xl text-sm text-muted sm:text-base">
-      The beta does not change the price. OC2 Companion is a paid app, and there is no subscription.
+      One-time pricing, no subscription. Testers pay the same as everyone else.
     </p>
 
     <div class="mt-6 grid gap-4 sm:grid-cols-2">
@@ -120,9 +120,8 @@
           <span class="text-sm text-muted">on top of the app, optional</span>
         </p>
         <p class="mt-3 text-sm leading-relaxed text-muted">
-          An add-on bought inside the app, on top of the app price. It unlocks the tablet workspace
-          (&ldquo;Tablet Workspace Pro&rdquo;) on a 10-inch or larger tablet in landscape, and is never offered on a phone, so a
-          phone user pays nothing extra.
+          Bought inside the app, this unlocks the tablet workspace (&ldquo;Tablet Workspace Pro&rdquo;) on a 10-inch or
+          larger tablet in landscape. It only appears there, so phone users pay nothing extra.
         </p>
       </div>
 
@@ -178,12 +177,12 @@
           </li>
           <li class="flex gap-2.5">
             <svg class="mt-0.5 h-4 w-4 shrink-0 text-accent" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M16.7 5.3a1 1 0 0 1 0 1.4l-7.5 7.5a1 1 0 0 1-1.4 0L3.3 9.7a1 1 0 1 1 1.4-1.4l3.3 3.3 6.8-6.8a1 1 0 0 1 1.4 0Z" clip-rule="evenodd"/></svg>
-            <span><strong class="font-semibold text-fg/90">A server reachable from the internet.</strong> Use <code class="rounded bg-surface2 px-1.5 py-0.5 font-mono text-xs text-fg/90">https://</code>. The app will not send your password over plain <code class="rounded bg-surface2 px-1.5 py-0.5 font-mono text-xs text-fg/90">http</code> to a public host unless you explicitly allow unencrypted connections.</span>
+            <span><strong class="font-semibold text-fg/90">A server reachable from the internet.</strong> Use <code class="rounded bg-surface2 px-1.5 py-0.5 font-mono text-xs text-fg/90">https://</code>. The app keeps to <code class="rounded bg-surface2 px-1.5 py-0.5 font-mono text-xs text-fg/90">https</code> for public hosts, so your password stays encrypted, and only uses plain <code class="rounded bg-surface2 px-1.5 py-0.5 font-mono text-xs text-fg/90">http</code> there if you turn that on yourself.</span>
           </li>
         </ul>
         <p class="mt-4 text-xs leading-relaxed text-muted">
           The default port is <code class="rounded bg-surface2 px-1.5 py-0.5 font-mono text-xs text-fg/90">12421</code>.
-          <strong class="font-semibold text-fg/90">Tailscale tip:</strong> use the <code class="rounded bg-surface2 px-1.5 py-0.5 font-mono text-xs text-fg/90">100.x</code> address, not the MagicDNS name (<code class="rounded bg-surface2 px-1.5 py-0.5 font-mono text-xs text-fg/90">something.ts.net</code>). The app treats <code class="rounded bg-surface2 px-1.5 py-0.5 font-mono text-xs text-fg/90">.ts.net</code> names as public hosts, so plain <code class="rounded bg-surface2 px-1.5 py-0.5 font-mono text-xs text-fg/90">http</code> to them is refused by default.
+          <strong class="font-semibold text-fg/90">Tailscale tip:</strong> use the <code class="rounded bg-surface2 px-1.5 py-0.5 font-mono text-xs text-fg/90">100.x</code> address, not the MagicDNS name (<code class="rounded bg-surface2 px-1.5 py-0.5 font-mono text-xs text-fg/90">something.ts.net</code>). The app treats <code class="rounded bg-surface2 px-1.5 py-0.5 font-mono text-xs text-fg/90">.ts.net</code> names as public hosts, so plain <code class="rounded bg-surface2 px-1.5 py-0.5 font-mono text-xs text-fg/90">http</code> to those names needs the unencrypted-connections option turned on.
         </p>
         <p class="mt-3 text-xs leading-relaxed text-muted">
           <strong class="font-semibold text-fg/90">Using autostart with a mesh VPN?</strong>
@@ -191,7 +190,7 @@
           <code class="rounded bg-surface2 px-1.5 py-0.5 font-mono text-xs text-fg/90">opencode2.server.listenHostname</code>:
           it listens on every interface, so your LAN and the VPN are both reachable and it does not depend on the adapter
           being up yet. Binding the VPN address directly also works. At logon that adapter often appears seconds later, so
-          the background companion retries for up to 5 minutes before giving up.
+          the background companion keeps retrying for up to 5 minutes, which covers a slow adapter.
         </p>
       </div>
 
@@ -208,8 +207,8 @@
   <section id="join" aria-labelledby="join-heading" class="mx-auto max-w-5xl scroll-mt-6 px-5 py-10 sm:px-8 sm:py-14">
     <h2 id="join-heading" class="text-2xl font-bold tracking-tight text-white sm:text-3xl">How to join the closed beta</h2>
     <p class="mt-2 max-w-2xl text-sm text-muted sm:text-base">
-      Three steps, in order. Sign in with the same Google account you use in the Play Store. The opt-in link
-      only works once that account is in the group.
+      Three steps, in order. Use the same Google account you use in the Play Store, since that is the account the
+      opt-in link recognises.
     </p>
 
     <ol class="mt-6 grid gap-4 md:grid-cols-3">
@@ -265,8 +264,8 @@
     </ol>
 
     <p class="mt-4 text-xs leading-relaxed text-muted">
-      Activation can take a few minutes after you opt in. OC2 Companion is a paid app, and joining the beta does not
-      change the price. See <a class="font-medium text-brand2 underline decoration-brand2/40 underline-offset-2 transition hover:text-white" href="#pricing">Pricing</a>.
+      Activation can take a few minutes after you opt in. Testers pay the same as everyone else, so see
+      <a class="font-medium text-brand2 underline decoration-brand2/40 underline-offset-2 transition hover:text-white" href="#pricing">Pricing</a> for the details.
     </p>
   </section>
 
@@ -333,8 +332,8 @@
           </ul>
           <p class="mt-4 border-t border-line/60 pt-3 text-xs leading-relaxed text-muted">
             An add-on to the app: a one-time <span class="text-fg/90">+$2</span> in-app purchase
-            (&ldquo;Tablet Workspace Pro&rdquo;), on top of the app price. A phone is never asked. The upsell only
-            appears where the workspace would have.
+            (&ldquo;Tablet Workspace Pro&rdquo;). It is only offered where the workspace would appear, so a phone is
+            never asked.
           </p>
         </div>
 
