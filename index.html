@@ -78,7 +78,7 @@
       <ul class="mt-5 flex flex-wrap gap-2 text-xs">
         <li class="rounded-full border border-brand/40 bg-brand/10 px-3 py-1 font-medium text-brand2">Closed beta</li>
         <li class="rounded-full border border-line bg-surface2 px-3 py-1 text-muted">Android 8.0+</li>
-        <li class="rounded-full border border-line bg-surface2 px-3 py-1 text-muted">v1.0.17</li>
+        <li class="rounded-full border border-line bg-surface2 px-3 py-1 text-muted">v1.0.25</li>
         <li class="rounded-full border border-line bg-surface2 px-3 py-1 text-muted">Paid app &middot; $2 one-time</li>
       </ul>
 
@@ -125,7 +125,7 @@
         </p>
         <img src="assets/screens/tablet-workspace.webp"
              alt="Tablet workspace: activity rail, file tree, code editor and chat side by side"
-             width="1920" height="1080" loading="lazy" decoding="async"
+             width="1600" height="900" loading="lazy" decoding="async"
              class="mt-4 w-full rounded-xl border border-line/60">
       </div>
 
@@ -354,14 +354,14 @@
   <section aria-labelledby="shots-heading" class="mx-auto max-w-5xl px-5 py-10 sm:px-8 sm:py-14">
     <h2 id="shots-heading" class="text-2xl font-bold tracking-tight text-white sm:text-3xl">See it in action</h2>
     <p class="mt-2 max-w-2xl text-sm text-muted sm:text-base">
-      Screens from the app, running against a demo project.
+      Captured from the app's built-in demo, so the project names and data shown here are sample data.
     </p>
 
-    <div class="mt-6 grid gap-4 sm:grid-cols-3">
+    <div class="mt-6 grid gap-4 sm:grid-cols-2">
 
       <figure class="rounded-2xl border border-line bg-surface p-3">
         <img src="assets/screens/phone-chat.webp"
-             alt="Chat mid-run: a streamed reply, a shell tool card and an edit diff, with the folder, branch and model chips"
+             alt="Chat mid-run: a streamed reply, a shell tool card with its output, and the branch and model chips"
              width="720" height="1280" loading="lazy" decoding="async"
              class="w-full rounded-xl border border-line/60">
         <figcaption class="mt-3 text-xs leading-relaxed text-muted">
@@ -372,35 +372,36 @@
 
       <figure class="rounded-2xl border border-line bg-surface p-3">
         <img src="assets/screens/phone-approvals.webp"
-             alt="The Waiting sheet with a pending file-edit permission and its diff preview"
+             alt="The Waiting sheet showing a pending shell command permission with Deny, Allow once and Always"
              width="720" height="1280" loading="lazy" decoding="async"
              class="w-full rounded-xl border border-line/60">
         <figcaption class="mt-3 text-xs leading-relaxed text-muted">
-          <span class="font-semibold text-fg/90">Approvals.</span> A run pauses, and the file change is shown before you
-          allow it.
-        </figcaption>
-      </figure>
-
-      <figure class="rounded-2xl border border-line bg-surface p-3">
-        <img src="assets/screens/phone-sessions.webp"
-             alt="Sessions grouped by folder, with running and approval badges"
-             width="720" height="1280" loading="lazy" decoding="async"
-             class="w-full rounded-xl border border-line/60">
-        <figcaption class="mt-3 text-xs leading-relaxed text-muted">
-          <span class="font-semibold text-fg/90">Sessions.</span> Grouped by folder, with running and approval badges.
+          <span class="font-semibold text-fg/90">Approvals.</span> A run pauses and shows you the exact command it wants
+          to run, with Deny, Allow once and Always.
         </figcaption>
       </figure>
 
     </div>
 
     <figure class="mt-4 rounded-2xl border border-line bg-surface p-3">
-      <img src="assets/screens/tablet-reference.webp"
-           alt="Selecting lines in the tablet editor and referencing them in the chat composer"
-           width="1920" height="1080" loading="lazy" decoding="async"
+      <img src="assets/screens/tablet-editing.webp"
+           alt="A source file open in the tablet editor in Editing mode, with an unsaved change and the Save action"
+           width="1600" height="900" loading="lazy" decoding="async"
            class="w-full rounded-xl border border-line/60">
       <figcaption class="mt-3 text-xs leading-relaxed text-muted">
-        <span class="font-semibold text-fg/90">Reference code in chat.</span> Select a line range on the tablet and it
-        arrives in the composer as a code block.
+        <span class="font-semibold text-fg/90">Edit on the tablet.</span> Switch a file from read-only to Editing, make
+        a change, and Save it back to your PC. If the file moved in the meantime, it says so instead of overwriting.
+      </figcaption>
+    </figure>
+
+    <figure class="mt-4 rounded-2xl border border-line bg-surface p-3">
+      <img src="assets/screens/tablet-approvals.webp"
+           alt="The tablet workspace with the sessions panel open and an approval waiting on you"
+           width="1600" height="900" loading="lazy" decoding="async"
+           class="w-full rounded-xl border border-line/60">
+      <figcaption class="mt-3 text-xs leading-relaxed text-muted">
+        <span class="font-semibold text-fg/90">Everything on one screen.</span> Your sessions, the run, and the approval
+        waiting on you, answered without leaving the workspace.
       </figcaption>
     </figure>
   </section>
@@ -435,7 +436,7 @@
       <div class="rounded-2xl border border-line bg-surface p-5 sm:p-6">
         <h3 class="text-sm font-semibold uppercase tracking-wider text-brand2">What to include</h3>
         <ul class="mt-4 space-y-2.5 text-sm text-muted">
-          <li class="flex gap-2.5"><span class="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-brand2"></span><span>App version, shown on <span class="text-fg/90">More &rarr; About</span> as <code class="rounded bg-surface2 px-1 py-0.5 font-mono text-xs text-fg/90">v1.0.17</code></span></li>
+          <li class="flex gap-2.5"><span class="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-brand2"></span><span>App version, shown on <span class="text-fg/90">More &rarr; About</span> as <code class="rounded bg-surface2 px-1 py-0.5 font-mono text-xs text-fg/90">v1.0.25</code></span></li>
           <li class="flex gap-2.5"><span class="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-brand2"></span><span>Your Android version and device model</span></li>
           <li class="flex gap-2.5"><span class="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-brand2"></span><span>What you did, step by step. As brief or as verbose as you like</span></li>
           <li class="flex gap-2.5"><span class="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-brand2"></span><span>What you expected, and what actually happened</span></li>
@@ -498,7 +499,7 @@
     </div>
 
     <div class="mt-10 flex flex-col gap-2 border-t border-line/70 pt-6 text-xs text-muted sm:flex-row sm:items-center sm:justify-between">
-      <p class="font-mono">com.Mrakulis.OC2Companion &middot; v1.0.17</p>
+      <p class="font-mono">com.Mrakulis.OC2Companion &middot; v1.0.25</p>
       <p>Copyright &copy; 2026 Mrakulis. All rights reserved.</p>
     </div>
 
